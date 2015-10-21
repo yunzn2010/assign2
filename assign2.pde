@@ -1,4 +1,3 @@
-/* please implement your assign1 code in this file. */
 PImage bg1img;
 PImage bg2img;
 PImage fighterimg;
