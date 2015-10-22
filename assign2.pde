@@ -1,3 +1,4 @@
+/* please implement your assign1 code in this file. */
 PImage bg1img;
 PImage bg2img;
 PImage fighterimg;
@@ -15,7 +16,6 @@ int z;
 int e;
 int f;
 float g=(random(480));
-int POINT;
 float b=floor(random(640));
 float c=floor(random(480));
 float blood=(random(225));
@@ -25,7 +25,6 @@ boolean leftPressed=false;
 boolean rightPressed=false;
 final int GAME_START=1,GAME_RUN=2,GAME_LOSE=3;
 int gameState;
-
 
 void setup () {
   size(640,480) ;  
@@ -45,10 +44,9 @@ void setup () {
   a=0;
   e=600;
   f=240;
-  POINT=0;
-  blood=45;
+  blood=39;
   background(0);
-  gameState=GAME_START;
+  gameState=GAfME_START;
 }
 
 void draw() {
@@ -72,28 +70,28 @@ void draw() {
   y%=1280;//bg2
   image(fighterimg,e,f);
   if(upPressed){
-    f-=6;
+    f-=8;
   }//fighter
   if(downPressed){
-    f+=6;
+    f+=8;
   }
   if(rightPressed){
-    e+=6;
+    e+=8;
   }
   if(leftPressed){
-    e-=6;
+    e-=8;
   }
-  if(e>640){
+  if(e>=610){
+    e=610;
+  }
+  if(e<=0){
     e=0;
   }
-  if(e<0){
-    e=640;
+  if(f>=460){
+    f=460;
   }
-  if(f>480){
+  if(f<=0){
     f=0;
-  }
-  if(f<0){
-    f=480;
   }
   
   image(enemyimg,a,g);
@@ -106,31 +104,30 @@ void draw() {
   image(treasureimg,b,c);
   
   fill(255,0,0);
-  rectMode(CORNERS);
-  rect(30,20,blood,40);
-  image(hpimg,20,20);//hp
+  rect(30,20,blood,20);
+  image(hpimg,21,20);//hp
 if(a+40>=e&&e+40>=a){
   if(g+40>=f&&f+40>=g){
-    blood-=45;
+    blood-=39;
     a=0;
     g=(random(480));
   }
 }//blood
-if(blood>=225){
-  blood=225;
-}
+
 if(b+40>=e&&e+40>=b){
     if(c+40>=f&&f+40>=c){
     b=floor(random(20,620));
     c=floor(random(20,460));
-    blood+=22.5;
+    if(blood<195){
+    blood+=19.5;
+    }
     }
   }//treasure
   if(g>f){
-    g-=2;
+    g-=3;
   }
   if(g<f){
-    g+=2;
+    g+=3;
   }
   
  if(blood<=30){
