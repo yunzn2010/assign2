@@ -46,7 +46,7 @@ void setup () {
   f=240;
   blood=39;
   background(0);
-  gameState=GAfME_START;
+  gameState=GAME_START;
 }
 
 void draw() {
