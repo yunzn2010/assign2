@@ -130,13 +130,13 @@ if(b+40>=e&&e+40>=b){
     g+=3;
   }
   
- if(blood<=30){
+ if(blood<=20){
    gameState=GAME_LOSE;
  }
  break;
  case GAME_LOSE:
    image(end2img,0,0);
-   if(mouseX>220&&mouseX<440&&mouseY>300&&mouseY<340){     
+   if(mouseX>210&&mouseX<440&&mouseY>300&&mouseY<350){     
      image(end1img,0,0);
      if(mousePressed){
        gameState=GAME_RUN;
